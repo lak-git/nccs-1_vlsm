@@ -1,0 +1,9 @@
+192.192.128.0/19
+Computing|503
+Business|203
+Law|43
+HR|43
+Marketing|43
+Finance|43
+WAN1|4
+WAN2|4

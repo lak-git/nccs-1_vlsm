@@ -1,0 +1,6 @@
+148.94.30.0/24
+Computing School|83
+Business School|43
+Academic Administration|9
+Human Resource|9
+Marketing|7
