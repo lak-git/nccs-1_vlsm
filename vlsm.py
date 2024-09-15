@@ -45,7 +45,6 @@ class IP_Address():
                 Block(val=num_list[i], max_val=num_list[i], is_network=True, id=i)
                 )
             elif i == split_index:
-                #Change
                 block_list.append(
                 Block(val=num_list[i], max_val=((256-binary_split)+num_list[i]), transition=True, id=i)
                 )
