@@ -1,0 +1,8 @@
+148.94.0.0/30, SM: 252, Core1 - Core2 Link
+ 
+148.94.0.4/30, SM: 252, Core1 - STANDBY Link
+ 
+148.94.0.8/30, SM: 252, Core2 - STANDBY Link
+ 
+148.94.0.12/30, SM: 252, temp
+ 

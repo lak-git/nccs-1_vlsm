@@ -22,9 +22,11 @@ class Block():
 
         elif self.transition:
             if (self.val + nums) > self.max_val:
-                #debug
-                print(self.val + nums, self.max_val)
-                raise Exception('\nLIMIT REACHED: Too many hosts to subnet')
+                raise Exception(
+                    f'\n-LIMIT REACHED: Too many hosts to subnet-\
+                    \nSubnet requirement: {self.val + nums}\
+                    \nMAX number of hosts: {self.max_val}'
+                    )
             self.val += nums
 
 
