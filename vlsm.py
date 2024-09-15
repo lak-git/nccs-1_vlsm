@@ -66,18 +66,16 @@ class IP_Address():
             self.info_list.append(number - nums)
 
         for ip_Block in self.block_list:
-            #Change
-            max_value = ip_Block.max_val + 1            
+            max_value = ip_Block.max_val      
             if not ip_Block.is_network and not ip_Block.transition:
                 ip_Block.val += number % max_value
-                if ip_Block.val >= ip_Block.max_val + 1:
-                    ip_Block.val %= ip_Block.max_val + 1
+                if ip_Block.val >= max_value:
+                    ip_Block.val %= max_value
                     jump_value += 1
 
                 jump_value += number // max_value
             #8bit case
             elif not ip_Block.is_network and ip_Block.transition and ip_Block.id == 3:
-               #Change
                ip_Block.safe_add(number % max_value)
             else:
                 ip_Block.safe_add(jump_value)
