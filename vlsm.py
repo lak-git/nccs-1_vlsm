@@ -61,13 +61,15 @@ class IP_Address():
         exp: int = math.ceil(math.log2(nums)); subnet_mask: int = 32-exp; number: int = 2**exp
         jump_value: int = 0
         binary: str = '1'*subnet_mask + '0'*(32-subnet_mask)
-        previous: str = f'{self.block_list[3]}.{self.block_list[2]}.{self.block_list[1]}.{self.block_list[0]}/{subnet_mask}, SM: {int(binary[24:],2)}'
+        sm_value: int = int(binary[24:],2)
+        previous: str = f'\
+{self.block_list[3]}.{self.block_list[2]}.{self.block_list[1]}.{self.block_list[0]}/{subnet_mask}, SM: {sm_value}, WM: {255-sm_value}'
 
         if self.extra_info:
             self.info_list.append(number - nums)
 
         for ip_Block in self.block_list:
-            max_value = ip_Block.max_val      
+            max_value = ip_Block.max_val + 1  
             if not ip_Block.is_network and not ip_Block.transition:
                 ip_Block.val += number % max_value
                 if ip_Block.val >= max_value:
